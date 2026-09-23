@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="layoutRacine">
+    <item>
+     <widget class="QTabWidget" name="ongletsPrincipaux">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="ongletEdition">
+       <attribute name="title">
+        <string>Édition</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="layoutCentral">
+        <item>
+         <widget class="QWidget" name="panneauGauche" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="layoutGauche">
+       <item>
+        <widget class="QLabel" name="labelPages">
+         <property name="text">
+          <string>Pages du livre</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-weight:bold; padding:4px;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="listePages"/>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="layoutBoutonsPages">
+         <item>
+          <widget class="QPushButton" name="btnNouvellePage">
+           <property name="text">
+            <string>+ Page</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSupprimerPage">
+           <property name="text">
+            <string>− Page</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="panneauDroit" native="true">
+      <layout class="QVBoxLayout" name="layoutDroit">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLineEdit" name="titre">
+         <property name="placeholderText">
+          <string>Titre de la page…</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { font-size:22px; font-weight:bold; color:#5a3d23; padding:12px 16px; border:none; border-bottom:1px solid #ccc; background:#faf6ee; }</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="editeur"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="barreEffets" native="true">
+         <property name="styleSheet">
+          <string notr="true">QWidget#barreEffets { background:#efe2c4; border-top:1px solid #ccc; }</string>
+         </property>
+         <layout class="QHBoxLayout" name="layoutEffets">
+          <item>
+           <widget class="QLabel" name="labelEffets">
+            <property name="text">
+             <string>À l'entrée de la page :</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-weight:bold; color:#5a3d23;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelPv">
+            <property name="text">
+             <string>PV</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinPv">
+            <property name="minimum">
+             <number>-999</number>
+            </property>
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelXp">
+            <property name="text">
+             <string>XP</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinXp">
+            <property name="minimum">
+             <number>-999</number>
+            </property>
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelObjet">
+            <property name="text">
+             <string>Objet reçu</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="objetRecu">
+            <property name="placeholderText">
+             <string>ex. Épée</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="ongletLecture">
+       <attribute name="title">
+        <string>Lecture</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutLecture"/>
+      </widget>
+      <widget class="QWidget" name="ongletDepart">
+       <attribute name="title">
+        <string>Paramètres</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutDepart">
+        <item>
+         <layout class="QGridLayout" name="grilleDepart">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelNomLivre">
+            <property name="text">
+             <string>Nom du livre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLineEdit" name="nomLivre">
+            <property name="placeholderText">
+             <string>ex. La Caverne maudite</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QLabel" name="labelDepart">
+            <property name="text">
+             <string>Valeurs de départ du joueur</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-size:18px; font-weight:bold; color:#5a3d23; padding:8px 0;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelPvDepart">
+            <property name="text">
+             <string>PV de départ</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spinPvDepart">
+            <property name="maximumSize">
+             <size>
+              <width>90</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="minimum">
+             <number>-999</number>
+            </property>
+            <property name="maximum">
+             <number>999</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <spacer name="spacerDepartH">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelXpDepart">
+            <property name="text">
+             <string>XP de départ</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="spinXpDepart">
+            <property name="maximumSize">
+             <size>
+              <width>90</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="minimum">
+             <number>-999</number>
+            </property>
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="labelObjetsDepart">
+            <property name="text">
+             <string>Objets de départ</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1" colspan="2">
+           <widget class="QLineEdit" name="objetsDepart">
+            <property name="placeholderText">
+             <string>séparés par des virgules, ex. Torche, Carte</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="spacerDepart">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionNouveau"/>
+    <addaction name="actionOuvrir"/>
+    <addaction name="actionEnregistrer"/>
+    <addaction name="actionEnregistrerSous"/>
+    <addaction name="actionAPropos"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuEdition">
+    <property name="title">
+     <string>Edition</string>
+    </property>
+    <addaction name="actionGras"/>
+    <addaction name="actionItalique"/>
+    <addaction name="actionSouligner"/>
+    <addaction name="actionCouleur"/>
+    <addaction name="actionSurligner"/>
+    <addaction name="actionPolice"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuEdition"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionGras"/>
+   <addaction name="actionItalique"/>
+   <addaction name="actionSouligner"/>
+   <addaction name="actionPolice"/>
+   <addaction name="actionCouleur"/>
+   <addaction name="actionSurligner"/>
+   <addaction name="separator"/>
+   <addaction name="actionAligner_a_gauche"/>
+   <addaction name="actionCentrer"/>
+   <addaction name="actionAligner_a_droite"/>
+   <addaction name="actionJustifi"/>
+  </widget>
+  <action name="actionNouveau">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/new.png</normaloff>:/Icones/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nouveau</string>
+   </property>
+  </action>
+  <action name="actionOuvrir">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/open.png</normaloff>:/Icones/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ouvrir</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/save.png</normaloff>:/Icones/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enregistrer</string>
+   </property>
+  </action>
+  <action name="actionEnregistrerSous">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/save_as.png</normaloff>:/Icones/save_as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enregistrer sous</string>
+   </property>
+  </action>
+  <action name="actionGras">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/bold.png</normaloff>:/Icones/bold.png</iconset>
+   </property>
+   <property name="text">
+    <string>Gras</string>
+   </property>
+  </action>
+  <action name="actionItalique">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/italic.png</normaloff>:/Icones/italic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Italique</string>
+   </property>
+  </action>
+  <action name="actionCouleur">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/couleur.png</normaloff>:/Icones/couleur.png</iconset>
+   </property>
+   <property name="text">
+    <string>Couleur</string>
+   </property>
+  </action>
+  <action name="actionSurligner">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/surligne.png</normaloff>:/Icones/surligne.png</iconset>
+   </property>
+   <property name="text">
+    <string>Surligner</string>
+   </property>
+  </action>
+  <action name="actionAPropos">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/info.png</normaloff>:/Icones/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>A Propos</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/exit.png</normaloff>:/Icones/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionPolice">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/font.png</normaloff>:/Icones/font.png</iconset>
+   </property>
+   <property name="text">
+    <string>Police</string>
+   </property>
+  </action>
+  <action name="actionSouligner">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/underline.png</normaloff>:/Icones/underline.png</iconset>
+   </property>
+   <property name="text">
+    <string>Souligner</string>
+   </property>
+  </action>
+  <action name="actionAligner_a_gauche">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/gauche.png</normaloff>:/Icones/gauche.png</iconset>
+   </property>
+   <property name="text">
+    <string>Aligner a gauche</string>
+   </property>
+  </action>
+  <action name="actionAligner_a_droite">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/droite.png</normaloff>:/Icones/droite.png</iconset>
+   </property>
+   <property name="text">
+    <string>Aligner a droite</string>
+   </property>
+  </action>
+  <action name="actionCentrer">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/centre.png</normaloff>:/Icones/centre.png</iconset>
+   </property>
+   <property name="text">
+    <string>Centrer</string>
+   </property>
+  </action>
+  <action name="actionJustifi">
+   <property name="icon">
+    <iconset resource="Ressources.qrc">
+     <normaloff>:/Icones/justifier.png</normaloff>:/Icones/justifier.png</iconset>
+   </property>
+   <property name="text">
+    <string>Justifier</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
